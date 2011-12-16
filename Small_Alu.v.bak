@@ -1,8 +1,7 @@
-module Small_Alu(clk, res, a, b, opcode, outp);
-  input clk;
+module Small_Alu(clk, res, a, b, outp);
+  input clk,res;
   integer i;
   input [31:0] a, b;
-  input [31:23] opcode;
   reg [7:0] exp_a,exp_b;
   output reg [8:0] outp;
   
@@ -13,6 +12,8 @@ module Small_Alu(clk, res, a, b, opcode, outp);
       if(exp_a > exp_b)
         outp = exp_a - exp_b;
       else
-        outp = exp_b - exp_a + 9 'H100;
+        outp = exp_b - exp_a + 9'H100;
+      if(res == 0)
+        outp = 0;
     end
 endmodule

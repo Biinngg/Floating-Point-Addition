@@ -1,6 +1,7 @@
-module Mux_2 (
-    input clk, reset, x, y, en,
-    output reg out);
+module Mux_2 (clk, res, x, y, en, out);
+    input clk, res, en;
+    input [31:0] x, y;
+    output reg [31:0] out;
     
     always @(posedge clk) begin
       begin
@@ -10,7 +11,7 @@ module Mux_2 (
         out = x;
       end
       begin
-      if(reset)
+      if(!res)
         out = 0;
       end
     end

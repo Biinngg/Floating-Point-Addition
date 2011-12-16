@@ -2,7 +2,7 @@ module Mux_2 (
     input clk, reset, x, y, en,
     output reg out);
     
-    initial @(posedge clk) begin
+    always @(posedge clk) begin
       begin
       if(en)
         out = y;

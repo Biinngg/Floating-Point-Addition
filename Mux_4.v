@@ -1,7 +1,7 @@
-module Mux_3 (clk, res, x, y, en, out);
+module Mux_4 (clk, res, x, y, en, out);
     input clk, res, en;
     input [31:0] x, y;
-    output reg [31:0] out;
+    output reg [22:0] out;
     
     always @(posedge clk) begin
       begin

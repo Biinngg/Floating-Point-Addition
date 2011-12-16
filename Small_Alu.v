@@ -1,6 +1,5 @@
 module Small_Alu(clk, res, a, b, outp);
   input clk,res;
-  integer i;
   input [31:0] a, b;
   reg [7:0] exp_a,exp_b;
   output reg [8:0] outp;

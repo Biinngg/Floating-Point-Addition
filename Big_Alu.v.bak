@@ -1,0 +1,15 @@
+module Big_Alu(clk, res, a, b, outp);
+  input clk,res;
+  input [31:0] a, b;
+  reg [22:0] fra_a,fra_b;
+  output reg [22:0] outp;
+  
+  always @(posedge clk)
+    begin
+      exp_a = a[22:0];
+      exp_b = b[22:0];
+      outp = exp_a + exp_b;
+      if(res == 0)
+        outp = 0;
+    end
+endmodule

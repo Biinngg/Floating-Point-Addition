@@ -1,8 +1,13 @@
-module Mux_1 (
-    input clk, reset, x, y, en,
-    output reg out);
+module Mux_1 (clk, res, x, y, en, out);
+    input clk, res, en;
+    input [31:0] x, y;
+    reg [7:0] exp_x, exp_y;
+    output reg [7:0] out;
     
-    always @(posedge clk) begin
+    always @(posedge clk)
+    begin
+      exp_x = x[30:23];
+      exp_y = y[30:23];
       begin
       if(en)
         out = y;
@@ -10,7 +15,7 @@ module Mux_1 (
         out = x;
       end
       begin
-      if(reset)
+      if(!res)
         out = 0;
       end
     end
