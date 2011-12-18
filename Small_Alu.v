@@ -8,10 +8,16 @@ module Small_Alu(clk, res, a, b, outp);
     begin
       exp_a = a[30:23];
       exp_b = b[30:23];
-      if(exp_a > exp_b)
-        outp = exp_a - exp_b;
+      if(exp_a >= exp_b)
+        begin
+        outp[7:0] = exp_a - exp_b;
+        outp[8] = 0;
+        end
       else
-        outp = exp_b - exp_a + 9'H100;
+        begin
+          outp[7:0] = exp_b - exp_a;
+          outp[8] = 1;
+        end
       if(res == 0)
         outp = 0;
     end

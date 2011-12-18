@@ -10,9 +10,9 @@ module Mux_1 (clk, res, x, y, en, out);
       exp_y = y[30:23];
       begin
       if(en)
-        out = y;
+        out = exp_y;
       else
-        out = x;
+        out = exp_x;
       end
       begin
       if(!res)

@@ -1,14 +1,14 @@
-module Mux_4 (clk, res, x, y, en, out);
+module Mux_4 (clk, res, big_alu_result, fra_result, en, out);
     input clk, res, en;
-    input [22:0] x, y;
-    output reg [22:0] out;
+    input [27:0] big_alu_result, fra_result;
+    output reg [27:0] out;
     
     always @(posedge clk) begin
       begin
       if(en)
-        out = y;
+        out = fra_result;
       else
-        out = x;
+        out = big_alu_result;
       end
       begin
       if(!res)
