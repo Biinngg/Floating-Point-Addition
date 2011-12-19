@@ -1,4 +1,4 @@
-module Rounding_instance(clk,res,shift,incre,
+module Rounding(clk,res,shift,incre,
   exp_result,fra_result,result,overflow);
   input clk,res;
   input [8:0] incre;
@@ -10,8 +10,12 @@ module Rounding_instance(clk,res,shift,incre,
   output reg [31:0] result;
   
   always @(posedge clk) begin
+    if(shift)
+      begin
     if(incre[8])//incase the second time exp is not overflow.
       overflow = 1;
+    else
+      overflow = 0;
     fra [24] = 0;
     fra[23:0] = shift[25:2];
     if(shift[1])
@@ -35,4 +39,5 @@ module Rounding_instance(clk,res,shift,incre,
         result = 0;
       end
     end
+  end
   endmodule

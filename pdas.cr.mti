@@ -12,12 +12,12 @@ Model Technology ModelSim SE-64 vlog 10.0d Compiler 2011.10 Oct 30 2011
 Top level modules:
 	Incre_Decre
 
-} {} {}} C:/modeltech64_10.0d/examples/pdas/Rounding.v {1 {vlog -work pda -vopt -nocovercells C:/modeltech64_10.0d/examples/pdas/Rounding.v
+} {} {}} C:/modeltech64_10.0d/examples/pdas/tese_bench.v {1 {vlog -work pda -vopt -nocovercells C:/modeltech64_10.0d/examples/pdas/tese_bench.v
 Model Technology ModelSim SE-64 vlog 10.0d Compiler 2011.10 Oct 30 2011
--- Compiling module Rounding
+-- Compiling module test_bench
 
 Top level modules:
-	Rounding
+	test_bench
 
 } {} {}} C:/modeltech64_10.0d/examples/pdas/Floating_Point_Addition.v {1 {vlog -work pda -vopt -nocovercells C:/modeltech64_10.0d/examples/pdas/Floating_Point_Addition.v
 Model Technology ModelSim SE-64 vlog 10.0d Compiler 2011.10 Oct 30 2011
@@ -61,19 +61,19 @@ Model Technology ModelSim SE-64 vlog 10.0d Compiler 2011.10 Oct 30 2011
 Top level modules:
 	Mux_3
 
-} {} {}} C:/modeltech64_10.0d/examples/pdas/Mux_4.v {1 {vlog -work pda -vopt -nocovercells C:/modeltech64_10.0d/examples/pdas/Mux_4.v
-Model Technology ModelSim SE-64 vlog 10.0d Compiler 2011.10 Oct 30 2011
--- Compiling module Mux_4
-
-Top level modules:
-	Mux_4
-
 } {} {}} C:/modeltech64_10.0d/examples/pdas/Shift_Left_Right.v {1 {vlog -work pda -vopt -nocovercells C:/modeltech64_10.0d/examples/pdas/Shift_Left_Right.v
 Model Technology ModelSim SE-64 vlog 10.0d Compiler 2011.10 Oct 30 2011
 -- Compiling module Shift_Left_Right
 
 Top level modules:
 	Shift_Left_Right
+
+} {} {}} C:/modeltech64_10.0d/examples/pdas/Mux_4.v {1 {vlog -work pda -vopt -nocovercells C:/modeltech64_10.0d/examples/pdas/Mux_4.v
+Model Technology ModelSim SE-64 vlog 10.0d Compiler 2011.10 Oct 30 2011
+-- Compiling module Mux_4
+
+Top level modules:
+	Mux_4
 
 } {} {}} C:/modeltech64_10.0d/examples/pdas/Mux_5.v {1 {vlog -work pda -vopt -nocovercells C:/modeltech64_10.0d/examples/pdas/Mux_5.v
 Model Technology ModelSim SE-64 vlog 10.0d Compiler 2011.10 Oct 30 2011
