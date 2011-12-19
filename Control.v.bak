@@ -13,6 +13,7 @@ module Control(clk,res,exp_diff,big_alu_result,
   output reg [7:0] shift_left_bits,incre_bit,decre_bit;
   
   always @(posedge clk) begin
+  n=0;
     if(exp_diff[8])
       fork
         mux_1_en = 1;

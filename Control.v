@@ -14,6 +14,7 @@ module Control(clk,res,exp_diff,big_alu_result,
   
   always @(posedge clk) begin
   n=0;
+  //Enables
     if(exp_diff[8])
       fork
         mux_1_en = 1;
@@ -26,6 +27,7 @@ module Control(clk,res,exp_diff,big_alu_result,
         mux_2_en = 1;
         mux_3_en = 0;
       join
+    //shift_right module
     if(exp_diff[7:0]>25)
       shift_right_bit = 25;
     else

@@ -15,7 +15,7 @@ module Rounding(clk,res,shift,incre,
     if(incre[8])//incase the second time exp is not overflow.
       overflow = 1;
     else
-      overflow = 0;
+      overflow = 0;//reset
     fra [24] = 0;
     fra[23:0] = shift[25:2];
     if(shift[1])
@@ -31,7 +31,7 @@ module Rounding(clk,res,shift,incre,
       begin
         result[31] = shift[27];
         result[30:23] = incre[7:0];
-        result[22:0] = shift[24:2];
+        result[22:0] = fra[23:0];
       end
     if(!res)
       begin

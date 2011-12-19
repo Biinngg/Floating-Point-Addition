@@ -31,7 +31,7 @@ module Rounding(clk,res,shift,incre,
       begin
         result[31] = shift[27];
         result[30:23] = incre[7:0];
-        result[22:0] = shift[24:2];
+        result[22:0] = fra[22:0];
       end
     if(!res)
       begin
