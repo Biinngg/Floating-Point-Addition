@@ -1,0 +1,26 @@
+Floating Point Addition
+-----------------
+使用Verilog设计的带四舍五入功能的浮点加法器
+
+使用Verilog HDL的行为级建模方式，根据浮点加法器组成的参考设计图来进行设计。符合IEEE754短实数浮点数格式标准。
+
+程序共分为14个模块，模块名及各自的功能分别为：
+
+Mux_1：选通器1。根据Control信号选择，使其中较大的阶码输出。
+Mux_2：选通器2。根据Control信号选择，使阶码较小的数输出。
+Mux_3：选通器3。根据Control信号选择，使阶码较大的数输出。
+Small_Alu：阶码运算器。计算出两个浮点数阶码之差的绝对值。将结果送到Control。
+Shift_Right：右移模块。根据Control送来的移位位数，对阶码较小数的尾数向右移位。
+Big_Alu：浮点加法运算模块。将Shift_Right与Mux_3送来的数进行相加，最后保留两位以供四舍五入，并且增加符号位，溢出位。
+Mux_5：选通器5。根据Control信号，对Mux_1与Rounding信号进行选通。
+Mux_4：选通器4。根据Control信号，对Big_Alu结果与Rounding结果进行选通。
+Incre_Decre：阶码增减模块。根据Control信号，对阶码进行调整，以符合IEEE754标准。
+Shift_Left_Right：尾数移位模块。根据Control信号，对尾数进行移位调整，以符合IEEE754标准。
+Rounding：四舍五入模块。根据Control信号，对尾数进行四舍五入，并返回四舍五入结果以验证是否计算正确。最后对符号位、阶码、尾数进行组装，输出符合IEEE754标准的计算结果。
+Control：控制模块。对整个计算流程进行分析控制。给出选通器的使能信号，根据Small_Alu结果来判断左移右移并送出移位位数，根据Big_Alu结果来对阶码进行移位，根据四舍五入结果来进行阶码调整。
+
+Author: Liu Bing
+
+E-mail: liubinging@gmail.com
+	
+blog：http://unixoss.com/?q=fpa
